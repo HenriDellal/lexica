@@ -212,7 +212,7 @@ public class GeneticAlgorithm {
 
         private static InputStream trieReader(File trieDir, Language language) throws IOException {
             if (!cachedTries.containsKey(language)) {
-                byte[] buffer = new byte[1024 * 1024 * 5]; // 5MiB - Needs to be able to fit the largest "words_*.bin file in memory.
+                byte[] buffer = new byte[1024 * 1024 * 10]; // 10MiB - Needs to be able to fit the largest "words_*.bin file in memory.
 
                 File trieFile = new File(trieDir, language.getTrieFileName());
                 InputStream stream = new FileInputStream(trieFile);
